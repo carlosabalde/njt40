@@ -13,18 +13,32 @@
   <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
   <script type="text/javascript" src="http://vjs.zencdn.net/c/video.js"></script>
   <script type="text/javascript" src="js/bigvideo.js"></script>
+  <script type="text/javascript" src="js/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-    <div id="wrap">  
+    <div id="wrap">
       <h2>Naughty Jesus turns 40</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non vestibulum sem, quis lacinia mauris. Sed non elit a massa fringilla eleifend et at ex. Aliquam in aliquet eros. Vestibulum in lorem euismod enim congue fringilla. Suspendisse tristique, quam et dignissim suscipit, diam nunc malesuada dolor, eu gravida lacus leo vitae est. Curabitur lacus nisi, venenatis at lacinia at, dignissim pellentesque magna. Donec efficitur elit metus, vel dictum neque aliquet at.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non vestibulum sem, quis lacinia mauris. Sed non elit a massa fringilla eleifend et at ex. Aliquam in aliquet eros. Vestibulum in lorem euismod enim congue fringilla. Suspendisse tristique, quam et dignissim suscipit, diam nunc malesuada dolor, eu gravida lacus leo vitae est. Curabitur lacus nisi, venenatis at lacinia at, dignissim pellentesque magna. Donec efficitur elit metus, vel dictum <a href="/video.mp4">neque aliquet at</a>.</p>
     </div>
     <script type="text/javascript">
       var BV;
       $(function() {
-        BV = new $.BigVideo({useFlashForFirefox:false});
+        BV = new $.BigVideo({
+          useFlashForFirefox:false
+        });
         BV.init();
-        BV.show('http://www.naughtyjesusturns40.com/video.mp4',{ambient:false});
+        if (Modernizr.touch) {
+          alert('TODO #1');
+        } else {
+          BV.show('http://www.naughtyjesusturns40.com/video.mp4', {
+            ambient:false
+          });
+          BV.getPlayer().ready(function() {
+            this.on('ended', function() {
+              alert('TODO #2');
+            });
+          });
+        }
       });
     </script>
 
