@@ -30,17 +30,8 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
 
-      function play(bv) {
-        bv.show('/video.mp4', {
-          ambient:false
-        });
-      }
-
       function done(bv) {
         bv.show('/images/bg' + random(1, 6) + '.jpg');
-        $('#overview').click(function() {
-          play(bv);
-        });
       }
 
       var bv = new $.BigVideo({
@@ -51,7 +42,9 @@
       if (Modernizr.touch) {
         done(bv);
       } else {
-        play(bv);
+        bv.show('/video.mp4', {
+          ambient:false
+        });
         bv.getPlayer().on('ended', function() {
           done(bv);
         });
