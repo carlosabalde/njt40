@@ -26,27 +26,29 @@
 
   <script type="text/javascript">
     $(function() {
-      function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-
-      function done(bv) {
-        bv.show('/images/bg' + random(1, 6) + '.jpg');
-      }
-
+      var bg = 0;
       var bv = new $.BigVideo({
         useFlashForFirefox:false
       });
-      bv.init();
 
+      function rotatebg() {
+        bv.show('/images/bg' + (bg + 1) + '.jpg');
+        bg = (bg + 1) % 6;
+      }
+
+      function done() {
+        setInterval(rotatebg, 10000);
+      }
+
+      bv.init();
       if (Modernizr.touch) {
-        done(bv);
+        done();
       } else {
         bv.show('/video.mp4', {
           ambient:false
         });
         bv.getPlayer().on('ended', function() {
-          done(bv);
+          done();
         });
       }
     });
