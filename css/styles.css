@@ -1,49 +1,105 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  outline: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+* { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; *behavior:url(boxsizing.htc); }
+html, body { 
+	margin:0;
+	padding:0;background:#000;
+	line-height:1;
+	font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-html { height: 101%; }
-body { font-size: 62.5%; font-family: Arial, Tahoma, sans-serif; line-height: 1; background: #000; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-ol, ul { list-style: none; }
-
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-strong { font-weight: bold; } 
-
-table { border-collapse: collapse; border-spacing: 0; }
-img { border: 0; max-width: 100%; }
-
-p { font-size: 1.35em; line-height: 1.25em; font-weight: normal; margin-bottom: 12px; }
-
-a { color: #95c3d6; }
-
-a:hover { color: #bedeec; }
-
-h2 { font-size: 2.55em; font-weight: bold; line-height: 1.75em; color: #fff; text-shadow: 1px 1px 0px #333; font-family: 'Nunito', 'Trebuchet MS', sans-serif; }
-
-#wrap {
-	position: relative;
+h1, h2, .nav-link, .playlist-btn {
+	font-family:'Source Sans Pro', sans-serif; font-weight:900; 
+	text-transform:uppercase;
+}
+h1 {font-size:48px; }
+h1, h2, h3, p { margin:0 0 10px; color:#fff; text-shadow: 1px 1px 1px #000;}
+p { line-height:1.4;  }
+a { color:#fff; font-style:italic; }
+blockquote { 
+	background:#fff; 
+	margin:0 0 20px;
+	padding:5px 20px; 
+}
+pre {
+	white-space:pre-wrap;       /* css-3 */
+	white-space:-moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space:-pre-wrap;      /* Opera 4-6 */
+	white-space:-o-pre-wrap;    /* Opera 7 */
+	word-wrap:break-word;       /* Internet Explorer 5.5+ */
+}
+.box { 
+	background:#444; background:rgba(0,0,0,.6);
+	padding:20px;
+	border-radius:5px;
+	margin-bottom:20px;
+}
+.nav { 
+	position:fixed; 
+	top:50px;left:50px;
+	z-index: 999999;
+	width:150px; 
+	-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
+}
+.credit {
+	margin:20px 0;
+}
+.download-links { margin-top:20px; }
+.download { margin-left:10px; padding:5px 10px; color:#fff; background:#111; border-radius:5px; display: inline; }
+.video-list {
+	list-style:none;
+	margin:0 0 -10px;
+	padding:0;
+	text-align:center;
+}
+.video-list li {
+	margin-bottom:10px;
+}
+.video-list .playlist-btn {
+	display:block;
+	width:100%;
+}
+.main {
+	position:relative;
+	margin:50px 50px 440px 220px;
+	min-width:300px;
+	-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
+}
+.nav-link {
+	display:block;
+	padding-bottom:10px;
+	text-decoration:none;
+	font-style:normal;
+}
+.toggle-btn {
+	position: absolute;
+	bottom: -50px;
+	left: 5px;
+	background:rgba(0,0,0,.8);
+	padding: 6px 12px;
+	border-radius: 10px;
 	color: #fff;
-	margin: 50px 20px 420px 100px;
-	padding: 25px 35px;
-	width: 550px;
-  background: rgba(0,0,0,0.55);
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
+	font-size: .8em;
+	font-family:'Source Sans Pro', sans-serif; font-weight:900; 
+	text-transform: uppercase;
 }
-
-.playlisting { list-style: none; }
-.playlisting li { display: inline-block; font-size: 1.45em; margin-right: 10px; }
-
-.playlist-links { font-weight: bold; }
+.playlist { 
+	padding:0; 
+	margin:20px 20px 40px;
+}
+.playlist-btn { 
+	background:#000; 
+	text-decoration:none; 
+	font-weight:bold; 
+	font-style:normal; 
+	text-transform:uppercase; 
+	font-size:14px; 
+	padding:5px 10px; 
+	margin-right:10px;
+	border-radius:5px; 
+}
+.dimmed {opacity:.7;}
+.footer-text {
+	padding:0 20px;
+	font-size:.9em;
+	font-style:italic;
+	opacity:.8;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
