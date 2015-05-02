@@ -23,13 +23,13 @@
     <script type="text/javascript">
       var BV;
       $(function() {
-        BV = new $.BigVideo({
-          useFlashForFirefox:false
-        });
-        BV.init();
         if (Modernizr.touch) {
           alert('TODO #1');
         } else {
+          BV = new $.BigVideo({
+            useFlashForFirefox:false
+          });
+          BV.init();
           BV.show('http://www.naughtyjesusturns40.com/video.mp4', {
             ambient:false
           });
