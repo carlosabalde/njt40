@@ -25,9 +25,13 @@
     </div>
 
     <script type="text/javascript">
-      var BV;
+      var BV = null;
       $(function() {
         function done() {
+          if (BV !== null) {
+            BV.dispose();
+          }
+          alert('TODO');
         }
 
         if (Modernizr.touch) {
@@ -40,7 +44,7 @@
           BV.show('http://www.naughtyjesusturns40.com/video.mp4', {
             ambient:false
           });
-          BV.getPlayer().addEvent('ended', function() {
+          BV.getPlayer().on('ended', function() {
             done();
           });
         }
