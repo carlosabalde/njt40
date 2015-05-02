@@ -23,8 +23,11 @@
     <script type="text/javascript">
       var BV;
       $(function() {
+        function done() {
+        }
+
         if (Modernizr.touch) {
-          alert('TODO #1');
+          done();
         } else {
           BV = new $.BigVideo({
             useFlashForFirefox:false
@@ -34,7 +37,7 @@
             ambient:false
           });
           BV.getPlayer().addEvent('ended', function() {
-            alert('TODO #2');
+            done();
           });
         }
       });
