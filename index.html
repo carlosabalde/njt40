@@ -34,21 +34,18 @@
       function rotatebg() {
         bv.show('/images/bg' + (bg + 1) + '.jpg');
         bg = (bg + 1) % 6;
-      }
-
-      function done() {
-        setInterval(rotatebg, 10000);
+        setTimeout(rotatebg, 10000);
       }
 
       bv.init();
       if (Modernizr.touch) {
-        done();
+        rotatebg();
       } else {
         bv.show('/video.mp4', {
           ambient:false
         });
         bv.getPlayer().on('ended', function() {
-          done();
+          rotatebg();
         });
       }
     });
