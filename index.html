@@ -32,7 +32,9 @@
           useFlashForFirefox:false
         });
         BV.init();
-        if (!Modernizr.touch) {
+        if (Modernizr.touch) {
+          done();
+        } else {
           BV.show('/video.mp4', {
             ambient:false
           });
