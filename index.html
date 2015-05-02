@@ -20,7 +20,7 @@
   <div class="main">
     <div id="overview" class="box">
       <h1>Naughty Jesus turns 40!</h1>
-      <h2>Ten un muy muy feliz día amiguito. Best wishes! :) -- <a href="/video.mp4">Carlos &amp; Cristian</a></h2>
+      <h2>Ten un muy muy feliz día amiguito. Best wishes de Carlos &amp; Cristian :)</h2>
     </div>
   </div>
 
@@ -29,13 +29,19 @@
       function random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
+
       function done(bv) {
         bv.show('/images/bg' + random(1, 6) + '.jpg');
+        $('#overview').click(function() {
+          alert('TODO');
+        });
       }
+
       var bv = new $.BigVideo({
         useFlashForFirefox:false
       });
       bv.init();
+
       if (Modernizr.touch) {
         done(bv);
       } else {
