@@ -23,23 +23,17 @@
     </div>
 
     <script type="text/javascript">
-      var BV = null;
+      var BV;
       $(function() {
         function done() {
-          if (BV !== null) {
-            BV.dispose();
-          }
-          alert('TODO');
+          BV.show('/images/bg1.jpg');
         }
-
-        if (Modernizr.touch) {
-          done();
-        } else {
-          BV = new $.BigVideo({
-            useFlashForFirefox:false
-          });
-          BV.init();
-          BV.show('http://www.naughtyjesusturns40.com/video.mp4', {
+        BV = new $.BigVideo({
+          useFlashForFirefox:false
+        });
+        BV.init();
+        if (!Modernizr.touch) {
+          BV.show('/video.mp4', {
             ambient:false
           });
           BV.getPlayer().on('ended', function() {
