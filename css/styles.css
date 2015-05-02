@@ -58,7 +58,7 @@ pre {
 }
 .main {
 	position:relative;
-	margin:50px 50px 440px 220px;
+	margin:50px 50px 440px 50px;
 	min-width:300px;
 	-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
 }
